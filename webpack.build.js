@@ -70,14 +70,6 @@ module.exports = {
         ]
     },
 
-    devServer: {
-        contentBase: __dirname + '/dist',
-        inline: true,
-        hot: true,
-        // GZIP
-        compress: true,
-    },
-
     plugins: [
         // 重新打包时清理dist/res文件夹
         new CleanWebpackPlugin(['dist/res/**/**'], {
@@ -93,7 +85,7 @@ module.exports = {
         // 打包css文件路径、文件名
         appCss, baseCss,
         // 热更新
-        new webpack.HotModuleReplacementPlugin(),
+        // new webpack.HotModuleReplacementPlugin(),
         // 提取公共js模块
         new webpack.optimize.CommonsChunkPlugin({
             // 对应的entry数组vendor
